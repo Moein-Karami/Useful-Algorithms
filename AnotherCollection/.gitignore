@@ -1,0 +1,8 @@
+*
+!*.cpp
+!README.md
+!.gitignore
+!_vimrc
+!index
+!notebook.tex
+!notebook*.pdf
