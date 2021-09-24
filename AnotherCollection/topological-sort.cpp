@@ -1,3 +1,4 @@
+// This function uses performs a non-recursive topological sort.
 // Running time: O(|V|^2).  If you use adjacency lists (vector<map<int> >),
 //               the running time is reduced to O(|E|).
 //   INPUT:   w[i][j] = 1 if i should come before j, 0 otherwise
