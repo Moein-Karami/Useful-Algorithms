@@ -2,7 +2,6 @@
 // It takes Nnumber of vertices and edges, and all the edges of the graph as input
 // and gives the maximum matching edges as output
 // O(E V^2)
-
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -13,7 +12,6 @@ struct StructEdge
     StructEdge *n;
 };
 typedef StructEdge *Edge;
-
 class Blossom
 {
     StructEdge pool[M * M * 2];
@@ -23,7 +21,6 @@ class Blossom
     bool inq[M], inb[M], ed[M][M];
 public:
 Blossom(int V, int E) : V(V), E(E) {}
-
     void addEdge(int u, int v)
     {
         if (!ed[u - 1][v - 1])
@@ -140,7 +137,6 @@ Blossom(int V, int E) : V(V), E(E) {}
     }
 
 };
-
 int main()
 {
     int u, v;
@@ -162,5 +158,3 @@ int main()
     }
     return 0;   
 }
-C++Copy
-

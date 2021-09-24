@@ -1,4 +1,5 @@
 // A C++ program that implements Z algorithm for pattern searching
+// O(N + M)
 #include<iostream>
 using namespace std;
 

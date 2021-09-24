@@ -1,4 +1,5 @@
 NeshesTeam template codes for ACM ICPC contests
+Kardak Team edition
 
 ### Base:
 *	vimrc
@@ -9,38 +10,48 @@ NeshesTeam template codes for ACM ICPC contests
 *	SCC
 *	Matching
 *	Max Flow BFS
-*   Max Flow Dinic
-*   Min Cost Max Flow
+*  	Max Flow Dinic
+*  	Min Cost Max Flow
 *	Cut Vertex
 *	Cut Edge
 *	Bellman Ford
 *	Dijkstra
 *	Prim
 *	DSU
-*   Eulerian Tour
+*  	Eulerian Tour
+*	Topological Sort
+*	General Graph matching
+*	Euclidian Extended Algorithm
 
 ### Geometry:
 *	Geometry
 *	Convex Hull
+*	Find Area
+*	Find intersection between lines
+*	Half Plane Intersection
+*	2Line Intersection
+*	Is Point In Polygon
 
 ### Data Sctructure:
 *	Fenwick1
 *	Fenwick2
-*   Segment Tree
-*   Segment Tree Lazy Propagation
+*  	Segment Tree
+*  	Segment Tree Lazy Propagation
 *	RMQ
-*   Trie
+*  	Trie
+*	ZAlgorithm
 
 ### String:
 *	Hash
 *	KMP
 *	Suffix Array
+*	AhoCorasick
 
 ### Number Theory:
 *	Phi
 *	370 SGU
-*   Euclid
-*   C(n,r)
+*  	Euclid
+*  	C(n,r)
 
 ### Other:
 *	Read Input

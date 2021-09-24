@@ -43,7 +43,7 @@ int main() {
 	for(int i = 1;i < n;++i) {
 		int a, b;
 		cin >> a >> b;
-		—-a, —-b;
+		--a, --b;
 		adj[a].push_back(b);
 		adj[b].push_back(a);
 	}
