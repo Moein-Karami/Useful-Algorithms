@@ -1,10 +1,7 @@
 #include <iostream>
 #include <queue>
-
 using namespace std;
-
 #define REP(i,n) for((i)=0;(i)<(int)(n);(i)++)
-
 //XXX change these lines!
 typedef int F;
 typedef long long C;
@@ -12,7 +9,6 @@ typedef long long C;
 #define C_INF (1LL<<60)
 #define MAXV 3000
 #define MAXE 10000 // E*2! [or E*4 for bidirected graphs]
-
 //no need to initialize these variables!
 int V,E;
 F cap[MAXE];
@@ -20,10 +16,7 @@ C cost[MAXE],dist[MAXV],pot[MAXV];
 int to[MAXE],prv[MAXE],last[MAXV],path[MAXV];
 bool used[MAXV];
 priority_queue <pair <C, int> > q;
-
-//output
-F flow[MAXE];
-
+F flow[MAXE];//output
 class MinCostFlow {
 public:
     MinCostFlow(int n);
@@ -33,7 +26,6 @@ private:
     pair <F, C> search(int s, int t);
     void bellman(int s);
 };
-
 ///////////////////////////BACKEND!/////////////////////////
 MinCostFlow::MinCostFlow(int n){
     V = n; E = 0;
@@ -88,7 +80,6 @@ pair <F, C> MinCostFlow::mincostflow(int s, int t){
     return make_pair(ansf,ansc);
 }
 ////////////////////////////////////////////////////
-
 int main() {
     return 0;
 }

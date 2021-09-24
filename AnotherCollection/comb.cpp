@@ -6,9 +6,7 @@ ll bin_pow(ll x, ll y) {
 	if (y & 1) res = (res * x) % MOD;
 	return res;
 }
-
 ll fct[MAXN], rev[MAXN], fct_rev[MAXN];
-
 void init(int n) {
 	fct[0] = 1;
 	for (int i = 1; i <= n; i ++)
@@ -22,7 +20,6 @@ void init(int n) {
 	for (int i = 1; i <= n; i ++)
 		fct_rev[i] = (fct_rev[i - 1] * rev[i]) % MOD;
 }
-
 int C(int n, int r) {
 	return (((fct[n] * fct_rev[r]) % MOD) * fct_rev[n - r]) % MOD;
 }

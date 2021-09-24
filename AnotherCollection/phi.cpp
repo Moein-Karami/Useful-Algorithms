@@ -1,12 +1,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
 const int N = 1000 * 1000;
-
 vector <int> pr;
 int lp[N], phi[N];
-
 void Sieve(int n){
 	for (int i = 2;i < n; ++i) {
 		if (lp[i] == 0)
@@ -17,7 +14,6 @@ void Sieve(int n){
 			lp[i * pr[j]] = pr[j];
 	}
 }
-
 void Find_Phi(int n) {
 	phi[1] = 1;
 	for(int i = 2;i < n;++i) {

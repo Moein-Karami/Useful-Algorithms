@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define pb push_back
 #define mp make_pair
 #define SQR(a) ((a) * (a))
@@ -12,13 +11,10 @@ using namespace std;
 #define FOR(i, n) for (int i = 0; i < (n); i ++)
 #define X first
 #define Y second
-
 typedef long long ll;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
-
 const int MAXN = 1 * 1000 + 10;
-
 int main () {
 	ios::sync_with_stdio(false);
 	return 0;

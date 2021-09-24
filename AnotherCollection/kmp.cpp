@@ -1,5 +1,4 @@
 #define SZ(x) (int)((x).size())
-
 const int M = 1000 * 100 + 4;
 int f[M];
 string s,t;

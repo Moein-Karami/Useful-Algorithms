@@ -1,17 +1,13 @@
 #include <iostream>
 #include <queue>
-
 using namespace std;
-
 #define REP(i,n) for((i)=0;(i)<(int)(n);(i)++)
 typedef int F;
 #define F_INF (1<<29)
 #define MAXV 10000
 #define MAXE 1000000 // E*2!
-
 F cap[MAXE], flow[MAXE];
 int to[MAXE], _prev[MAXE], last[MAXV], used[MAXV], level[MAXV];
-
 struct MaxFlow {
     int V, E;
 
@@ -20,7 +16,6 @@ struct MaxFlow {
         V = n; E = 0;
         REP(i,V) last[i] = -1;
     }
-
     void add_edge(int x, int y, F f) { //directed edge
         cap[E] = f; flow[E] = 0; to[E] = y;
         _prev[E] = last[x]; last[x] = E; E++;
@@ -28,7 +23,6 @@ struct MaxFlow {
         cap[E] = 0; flow[E] = 0; to[E] = x;
         _prev[E] = last[y]; last[y] = E; E++;
     }
-
     bool bfs(int s, int t){
         int i;
         REP(i,V) level[i] = -1;
@@ -44,7 +38,6 @@ struct MaxFlow {
         }
         return (level[t] != -1);
     }
-
     F dfs(int v, int t, F f){
         int i;
         if(v == t) return f;
@@ -59,7 +52,6 @@ struct MaxFlow {
             }
         return 0;
     }
-
     F maxflow(int s, int t) {
         int i;
         while(bfs(s,t)) {
@@ -71,5 +63,4 @@ struct MaxFlow {
             ans += flow[i];
         return ans;
     }
-
 };

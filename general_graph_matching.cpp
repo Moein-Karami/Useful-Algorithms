@@ -1,6 +1,3 @@
-// C++ Implementation of Edmonds Blossoms' Maximum Matching Algorithm
-// It takes Nnumber of vertices and edges, and all the edges of the graph as input
-// and gives the maximum matching edges as output
 // O(E V^2)
 #include <iostream>
 #include <cstring>
@@ -21,8 +18,7 @@ class Blossom
     bool inq[M], inb[M], ed[M][M];
 public:
 Blossom(int V, int E) : V(V), E(E) {}
-    void addEdge(int u, int v)
-    {
+    void addEdge(int u, int v){
         if (!ed[u - 1][v - 1])
         {
             top->v = v, top->n = adj[u], adj[u] = top++;
@@ -30,9 +26,7 @@ Blossom(int V, int E) : V(V), E(E) {}
             ed[u - 1][v - 1] = ed[v - 1][u - 1] = true;
         }
     }
-    // utility function for blossom contraction
-    int LCA(int root, int u, int v)
-    {
+    int LCA(int root, int u, int v){
         static bool inp[M];
         memset(inp, 0, sizeof(inp));
         while (1)
@@ -50,8 +44,7 @@ Blossom(int V, int E) : V(V), E(E) {}
                 v = father[match[v]];
         }
     }
-    void mark_blossom(int lca, int u)
-    {
+    void mark_blossom(int lca, int u){
         while (base[u] != lca)
         {
             int v = match[u];
@@ -61,8 +54,7 @@ Blossom(int V, int E) : V(V), E(E) {}
                 father[u] = v;
         }
     }
-    void blossom_contraction(int s, int u, int v)
-    {
+    void blossom_contraction(int s, int u, int v){
         int lca = LCA(s, u, v);
         memset(inb, 0, sizeof(inb));
         mark_blossom(lca, u);
@@ -79,8 +71,7 @@ Blossom(int V, int E) : V(V), E(E) {}
                     inq[q[++qt] = u] = true;
             }
     }
-    int find_augmenting_path(int s)
-    {
+    int find_augmenting_path(int s){
         memset(inq, 0, sizeof(inq));
         memset(father, -1, sizeof(father));
         for (int i = 0; i < V; i++)
@@ -107,8 +98,7 @@ Blossom(int V, int E) : V(V), E(E) {}
         }
         return -1;
     }
-    int augment_path(int s, int t)
-    {
+    int augment_path(int s, int t){
         int u = t, v, w;
         while (u != -1)
         {
@@ -120,8 +110,7 @@ Blossom(int V, int E) : V(V), E(E) {}
         }
         return t != -1;
     }
-    int edmondsBlossomAlgorithm()
-    { // Converted recursive algorithm to iterative version for simplicity
+    int edmondsBlossomAlgorithm(){ // Converted recursive algorithm to iterative version for simplicity
         int match_counts = 0;
         memset(match, -1, sizeof(match));
         for (int u = 0; u < V; u++)
@@ -129,30 +118,26 @@ Blossom(int V, int E) : V(V), E(E) {}
                 match_counts += augment_path(u, find_augmenting_path(u));
         return match_counts;
     }
-    void printMatching()
-    {
+    void printMatching(){
         for (int i = 0; i < V; i++)
             if (i < match[i])
                 cout << i + 1 << " " << match[i] + 1 << "\n";
     }
 
 };
-int main()
-{
+int main(){
     int u, v;
     int V, E;
     cin >> V >> E;
     Blossom bm(V, E);
-    while (E--)
-    {
+    while (E--){
         cin >> u >> v;
         bm.addEdge(u - 1, v - 1);
     }
     int res = bm.edmondsBlossomAlgorithm();
     if(!res)
         cout << "No Matching found\n";
-    else
-    {
+    else{
         cout << "Total Matching = " << res << "\n";
         bm.printMatching();
     }

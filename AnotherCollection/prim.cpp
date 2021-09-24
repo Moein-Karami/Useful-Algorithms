@@ -1,7 +1,6 @@
 const int N = 1000 * 100 + 5;
 vector <pii> adj[N];
 int ans, mrk[N];
-
 void prim(int v) {
 	int w;
 	set <pii> st;

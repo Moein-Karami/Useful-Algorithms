@@ -5,7 +5,6 @@ int n, m, p;
 // n: number of nodes in first part
 // m: number of nodes in second part
 // p: number of edges
-
 bool dfs(int x) {
 	if (mark[x]) return false;
 
@@ -20,7 +19,6 @@ bool dfs(int x) {
 	}
 	return false;
 }
-
 void bi_match() {
 	CLR(match, -1);
 	for (int i = 0; i < n; i ++) {
@@ -32,21 +30,17 @@ void bi_match() {
 		if (!check) break;
 	}
 }
-
 int main () {
 	cin >> n >> m >> p;
 	for (int i = 0; i < p; i ++) {
 		int x, y; cin >> x >> y; x --, y --;
 		// x: a node in first part  [0, n)
 		// y: a node in second part [0, m)
-
 		adj[x].pb(y);
 	}
-
 	bi_match();
 	int ans = 0;
 	FOR(i, n) ans += (match[0][i] != -1);
 	cout << ans << endl;
 	return 0;
 }
-

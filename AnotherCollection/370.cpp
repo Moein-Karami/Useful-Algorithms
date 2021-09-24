@@ -1,7 +1,6 @@
 bool mark[MAXN];
 vector<int> dv[MAXN];
 int n, m;
-
 // counts positive integers up to n that are relatively prime to x
 int f(int x) {
 	int res = 0;
@@ -15,7 +14,6 @@ int f(int x) {
 	}
 	return res;
 }
-
 int main () {
 	for (int i = 2; i < n; i ++)
 		if (!mark[i]) {	
@@ -29,4 +27,3 @@ int main () {
 	cout << ans << endl;
 	return 0;
 }
-

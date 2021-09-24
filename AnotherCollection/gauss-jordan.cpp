@@ -13,20 +13,16 @@
 // OUTPUT:   X      = an nxm matrix (stored in b[][])
 //           A^{-1} = an nxn matrix (stored in a[][])
 //           returns determinant of a[][]
-
 const double EPS = 1e-10;
-
 typedef vector<int> VI;
 typedef double T;
 typedef vector<T> VT;
 typedef vector<VT> VVT;
-
 T GaussJordan(VVT &a, VVT &b) {
   const int n = a.size();
   const int m = b[0].size();
   VI irow(n), icol(n), ipiv(n);
   T det = 1;
-
   for (int i = 0; i < n; i++) {
     int pj = -1, pk = -1;
     for (int j = 0; j < n; j++) if (!ipiv[j])
@@ -39,7 +35,6 @@ T GaussJordan(VVT &a, VVT &b) {
     if (pj != pk) det *= -1;
     irow[i] = pj;
     icol[i] = pk;
-
     T c = 1.0 / a[pk][pk];
     det *= a[pk][pk];
     a[pk][pk] = 1.0;
@@ -52,14 +47,11 @@ T GaussJordan(VVT &a, VVT &b) {
       for (int q = 0; q < m; q++) b[p][q] -= b[pk][q] * c;
     }
   }
-
   for (int p = n-1; p >= 0; p--) if (irow[p] != icol[p]) {
     for (int k = 0; k < n; k++) swap(a[k][irow[p]], a[k][icol[p]]);
   }
-
   return det;
 }
-
 int main() {
   const int n = 4;
   const int m = 2;

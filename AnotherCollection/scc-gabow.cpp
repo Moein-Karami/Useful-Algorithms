@@ -1,7 +1,6 @@
 vector <int> adj[N];
 stack <int> S, P;
 int mrk[N], ind, col[N], CL;
-
 void dfs(int v) {
 	mrk[v] = ++ind;
 	S.push(v);
@@ -26,6 +25,5 @@ void dfs(int v) {
 		S.pop();
 	}
 }
-
 //main: for(int i = 1;i <= n;++i)
 //			if(!mrk[i]) dfs(i);

@@ -1,5 +1,4 @@
 const int N = 1000 * 100 + 5, LOG = 20;
-
 class RMQ{
 	int f[LOG][N], Lgl[N], S;
 public:

@@ -1,4 +1,3 @@
-// A C++ program to check if two given line segments intersect
 #include <iostream>
 using namespace std;
 struct Point
@@ -6,7 +5,6 @@ struct Point
 	int x;
 	int y;
 };
-// Given three collinear points p, q, r, the function checks if
 // point q lies on line segment 'pr'
 bool onSegment(Point p, Point q, Point r)
 {
@@ -16,15 +14,11 @@ bool onSegment(Point p, Point q, Point r)
 
 	return false;
 }
-// To find orientation of ordered triplet (p, q, r).
-// The function returns following values
 // 0 --> p, q and r are collinear
 // 1 --> Clockwise
 // 2 --> Counterclockwise
 int orientation(Point p, Point q, Point r)
 {
-	// See https://www.geeksforgeeks.org/orientation-3-ordered-points/
-	// for details of below formula.
 	int val = (q.y - p.y) * (r.x - q.x) -
 			(q.x - p.x) * (r.y - q.y);
 	if (val == 0) return 0; // collinear

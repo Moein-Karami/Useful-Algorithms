@@ -2,7 +2,6 @@ typedef long double DOUBLE;
 typedef complex<DOUBLE> COMPLEX;
 typedef vector<DOUBLE> VD;
 typedef vector<COMPLEX> VC;
-
 struct FFT {
     VC A;
     int n, L;
@@ -15,14 +14,12 @@ struct FFT {
         }
         return ret;
     }
-
     void BitReverseCopy(VC a) {
         for (n = 1, L = 0; n < a.size(); n <<= 1, L++) ;
         A.resize(n);
         for (int k = 0; k < n; k++)
         A[ReverseBits(k)] = a[k];
     }
-
     VC DFT(VC a, bool inverse) {
         BitReverseCopy(a);
         for (int s = 1; s <= L; s++) {
@@ -43,27 +40,22 @@ struct FFT {
         if (inverse) for (int i = 0; i < n; i++) A[i] /= n;
         return A;
     }
-
     // c[k] = sum_{i=0}^k a[i] b[k-i]
     VD Convolution(VD a, VD b) {
         int L = 1;
         while ((1 << L) < a.size()) L++;
         while ((1 << L) < b.size()) L++;
         int n = 1 << (L+1);
-
         VC aa, bb;
         for (size_t i = 0; i < n; i++) aa.push_back(i < a.size() ? COMPLEX(a[i], 0) : 0);
         for (size_t i = 0; i < n; i++) bb.push_back(i < b.size() ? COMPLEX(b[i], 0) : 0);
-
         VC AA = DFT(aa, false);
         VC BB = DFT(bb, false);
         VC CC;
         for (size_t i = 0; i < AA.size(); i++) CC.push_back(AA[i] * BB[i]);
         VC cc = DFT(CC, true);
-
         VD c;
         for (int i = 0; i < a.size() + b.size() - 1; i++) c.push_back(cc[i].real());
         return c;
     }
-
 };
