@@ -43,4 +43,4 @@ int main() {
 	fill(is_av, is_av + N, 1);
 	divide(0);
 	return 0;
-}
+}// peyda kardan centroid o bazgashti fek konam O(nlgn)
