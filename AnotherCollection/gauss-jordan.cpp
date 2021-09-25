@@ -63,4 +63,4 @@ int main() {
     b[i] = VT(B[i], B[i] + m);
   }
   double det = GaussJordan(a, b);
-}
+}// hale n moadele n majhool O(n ^ 3) 
