@@ -1,7 +1,7 @@
-// GETS:
+// GETS: 
 // V->number of vertices
 // E->number of edges
-// pair of vertices as edges (vertices are 1..V)
+// pair of vertices as edges (vertices are 1..V) O(E V^2)
 // GIVES:
 // output of edmonds() is the maximum matching
 // match[i] is matched pair of i (-1 if there isn't a matched pair)
