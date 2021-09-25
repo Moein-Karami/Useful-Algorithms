@@ -58,4 +58,4 @@ struct FFT {
         for (int i = 0; i < a.size() + b.size() - 1; i++) c.push_back(cc[i].real());
         return c;
     }
-};
+};//aslesh akhareshe ke miad a ro to b zarb mikone ke do ta chanjomleian orderesh age n maximum darage bashe mishe O(nlgn)
