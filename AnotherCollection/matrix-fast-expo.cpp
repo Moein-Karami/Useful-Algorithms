@@ -39,4 +39,4 @@ VVT power(VVT &A, int k) {
         B = multiply(B, B);
     }
     return ret;
-}
+}// ye matrice ro be tavan k miresoone ba O(n ^ 3 * lg(k))

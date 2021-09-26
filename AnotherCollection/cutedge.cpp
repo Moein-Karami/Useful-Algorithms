@@ -12,4 +12,4 @@ void dfs(int x, int par, int len) {
 			backEdge[x] = min(backEdge[x], tmp);
 		}
 	}
-}
+}// yal haye boreshi peyda mikone O(n + m)

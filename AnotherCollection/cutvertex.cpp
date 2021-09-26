@@ -18,4 +18,4 @@ void dfs(int x, int par, int dep) {
 	}
 	ans[x] = check;
 	if (par == -1 && cnt < 2) ans[x] = false;
-}
+} \\ ras boreshi dar miare O(n + m)

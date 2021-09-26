@@ -13,4 +13,4 @@ bool bellman(int start) {
 		if (d[y] > d[x] + w) return false;
 	}
 	return true;
-}
+} // O(n * m) ye start midim ham distance ha ro bedast miare o ham dor manfi ro check mikone

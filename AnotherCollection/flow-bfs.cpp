@@ -41,4 +41,4 @@ int maxflow(int start, int end) {
 		total += flow;
 	}
 	return total;
-}
+}//O(max_flow * E) to net neveshte bood nemidoonam chejorie 

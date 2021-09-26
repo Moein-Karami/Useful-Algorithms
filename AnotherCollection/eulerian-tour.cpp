@@ -7,4 +7,4 @@ void euler(int x) {
 		}
 	}
 	tour.pb(x);
-}
+}//O(n + m) tour oileri migere
