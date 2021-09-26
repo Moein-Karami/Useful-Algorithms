@@ -34,4 +34,4 @@ namespace Suffix{
 			else
 				k = 0;
 	}
-};
+};//ham o(n) dare ham o(nlgn) nemidoonam in kodoomeshe
