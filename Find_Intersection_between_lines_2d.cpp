@@ -1,6 +1,5 @@
 struct Point{
 	int x, y;};
-
 // A line segment with left as Point
 // with smaller x value and right with
 // larger x value.
@@ -13,9 +12,7 @@ struct Event {
 	Event(int x, int y, bool l, int i) : x(x), y(y), isLeft(l), index(i) {}
 	bool operator<(const Event& e) const {
 			if(y==e.y)return x<e.x;
-			return y < e.y;
-	}
-};
+			return y < e.y;}};
 // point q lies on line segment 'pr'
 bool onSegment(Point p, Point q, Point r){
 	if (q.x <= max(p.x, r.x) && q.x >= min(p.x, r.x) &&
@@ -42,8 +39,7 @@ bool doIntersect(Segment s1, Segment s2){
 	if (o2 == 0 && onSegment(p1, q2, q1)) return true;
 	if (o3 == 0 && onSegment(p2, p1, q2)) return true;
 	if (o4 == 0 && onSegment(p2, q1, q2)) return true;
-	return false; // Doesn't fall in any of the above cases
-}
+	return false; // Doesn't fall in any of the above cases}
 set<Event>::iterator pred(set<Event> &s, set<Event>::iterator it) {
 	return it == s.begin() ? s.end() : --it;}
 set<Event>::iterator succ(set<Event> &s, set<Event>::iterator it) {
@@ -74,8 +70,7 @@ int isIntersect(Segment arr[], int n){
 				if(mp.count(s)==0){mp[s]++;ans++;} //if not already checked we can increase count in map
 			}
 			if(prev != s.end() && next != s.end() && next->index==prev->index)ans--;
-			s.insert(curr);
-		}
+			s.insert(curr);}
 		else{
 			auto it=s.find(Event(arr[index].left.x, arr[index].left.y, true, index));
 			auto next = succ(s, it);
@@ -85,8 +80,7 @@ int isIntersect(Segment arr[], int n){
 					string s1=to_string(prev->index+1)+" "+to_string(next->index+1);
 				if (mp.count(s)==0&&mp.count(s1)==0&&doIntersect(arr[prev->index], arr[next->index]))
 					ans++;
-					mp[s]++;
-				}
+					mp[s]++;}
 			s.erase(it);
 		}
 	}
