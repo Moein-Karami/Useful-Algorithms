@@ -25,4 +25,4 @@ void Find_Phi(int n) {
 				phi[i] *= lp[i], phi[i] /= (lp[i] - 1)
 		}
 	}
-}
+} // phi euiler ro hesab mikone ke tedad addad ghabl khodesh ke nesbat behesh avalan O(nlgn) bekhatere gharbal avalesh
